@@ -1,0 +1,336 @@
+#include<iostream>
+#include "stringhendel.h"
+using namespace std;
+
+int main(int args,char *argv[])
+{
+	cout << args << endl;
+	cout << *argv << endl;
+	cout <<" * argv[1]:" <<argv[1] << endl;
+	cout << " * argv[2]:" << argv[2] << endl;
+
+
+	return 0;
+
+------------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int taste = 0;
+	int plateEmpty = 10;
+	do {
+		cout << "have you taste the food " << endl;
+		plateEmpty--;
+		cout << "enter the taske (0/1)";
+		cin >> taste;
+
+
+	} while ((taste > 0) && (plateEmpty > 0));
+
+	if (plateEmpty == 0){
+		cout << "person stop eating plate is empty" << endl;
+	cout << "food was awesome " << endl;
+}
+	if (taste == 0) {
+		cout << "food was not good" << endl;
+		cout << "person stop eating food was not good" << endl;
+	}
+
+
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+int main()
+{
+	int start, end;
+	cout << "start table";
+	cin >> start;
+	cout << "end table";
+	cin >> end;
+
+	for (int i = 1;i <= end;i++)
+	{
+		for (int j = 1;j <= end;j++)
+		{
+			cout << i << " x " << j << " = " << i * j << endl;
+		}
+		cout<<"================================================"<<endl;
+	}
+
+}
+------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void rev() {
+
+	int start, end;
+	cout << "start table";
+	cin >> start;
+	cout << "end table";
+	cin >> end;
+
+	for (int i = 1;i <= end;i++)
+	{
+		for (int j = 1;j <= end;j++)
+		{
+			cout << j<< " x " << i << " = " << i * j << "\t";
+		}
+		cout  << endl;
+	}
+
+}
+
+
+
+
+}
+--------------------------------#include<iostream>
+using namespace std;
+#define MAXCAP 100
+
+
+int main()
+{
+	int capCurrent, unusedCap = 0;
+	cout << "Enter the current storage";
+	cin >> capCurrent;
+	unusedCap = MAXCAP - capCurrent;
+	if(unusedCap == 0)
+	{
+		cout << "storage is full";
+		return 0;
+
+	}
+	cout << "if you can store more data enjoy ";
+
+}
+----------------------------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+typedef struct user {
+	int _id;
+	int usertype;
+	string username;
+
+
+}users;
+void dispmenunu();
+void dispmenuau();
+
+int main()
+{
+	users u;
+	cout << "enter id" << endl;
+	cin >> u._id;
+	cout << "enter usertype(0/1)" << endl;
+	cin >> u.usertype;
+	cout << "enter user name";
+	cin >> u.username;
+
+	if (u.usertype == 0)
+	{
+		dispmenunu();
+	}
+	else
+	{
+		dispmenuau();
+
+	}
+	cout << "application ended success" << endl;
+	return 0;
+}
+void dispmenunu()
+{
+	cout << "i am able to access admin menu Thanks###";
+}
+void dispmenuau()
+{
+	cout << "i am not able to access admin menu ###";
+}
+
+
+----------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+	int i;
+	i = 0;
+	while (i < 5)
+	{
+		cout  << i << endl;
+		i++;
+	}
+}
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+#include <iostream>
+    using namespace std;
+
+    int main(); {
+
+        int n ;
+        cout << "enter the num: " << endl;
+        cin >> n;
+
+
+        for (int i = 1; i <= n; i++) {
+            int term = i * i - 1;
+            cout << term <<",";
+        }
+
+
+        return;
+    }
+}
+
+	
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+#include <iostream>
+    using namespace std;
+
+    int main(); {
+
+        int n ;
+        cout << "enter the num: " << endl;
+        cin >> n;
+
+
+        for (int i = 1; i <= n; i++) {
+            int term = i * i - 1;
+            cout << term <<",";
+        }
+
+
+        return;
+    }
+}
+
+	
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+#include <iostream>
+    using namespace std;
+
+    int main(); {
+
+        int n ;
+        cout << "enter the num: " << endl;
+        cin >> n;
+
+
+        for (int i = 1; i <= n; i++) {
+            int term = i * i - 1;
+            cout << term <<",";
+        }
+
+
+        return;
+    }
+}
+
+	
+---------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+	int n;
+	cout << "enter the num:";
+    cin >> n;
+	for (int i = 0,j;i < n;i++)
+	{
+		for ( j = 1;j < n;j++) {
+			cout << i * n + j << "*";
+		
+		}	cout << i * n + j<<endl;
+	}
+
+}
+
+	
+-------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+	int n;
+	cout << "enter the num:";
+    cin >> n;
+	int res = 0, temp = 1;
+	for (int i = 0;i <= 5;i++)
+	{
+		res = res +(n / temp) % 10;
+			temp *= 10;
+		
+		}	cout <<"sum is:" << res;
+	return ;
+	}
+
+
+
+	-------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void gun()
+{
+	int n;
+	cout << "enter the num:";
+    cin >> n;
+	int res = 0, temp = 1;
+	for (int i = 0;i <= 5;i++)
+	{
+		res = res +(n / temp) % 10;
+			temp *= 10;
+		
+		}	cout <<"sum is:" << res;
+	return ;
+	}
+
+
+
+	
+--------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+
+void swap() {
+    int a = 5, b = 10;
+
+    cout << "Before swap: a = " << a << ", b = " << b << endl;
+
+    int temp = a;
+    a = b;
+    b = temp;
+
+    cout << "After swap: a = " << a << ", b = " << b << endl;
+
+    return ;
+}
+
+
+
+
