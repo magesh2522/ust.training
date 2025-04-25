@@ -1,8 +1,14 @@
 #include <iostream>
-#include <string>
 #include <iomanip>
 using namespace std;
 
+struct studen {
+	int id;
+	string name;
+	float m1, m2, m3, m4;
+	int n;
+
+};
 int main() {
 	int n;
 	cout << "Enter the number of students: ";
@@ -28,3 +34,4 @@ int main() {
 }
 
 
+	
