@@ -24,13 +24,5 @@
     <ClCompile Include="pro03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pro04.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pro03.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
