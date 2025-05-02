@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void find_positions(const string& a) {
+void find(const string& a) {
     size_t p_are = a.find("are");
     size_t p_i = a.find("i");
 
@@ -15,16 +15,17 @@ void find_positions(const string& a) {
     cout << "Sum = " << total_sum << endl;
 }
 
+
 int main() {
     string a;
     getline(cin, a); 
 
-    find_positions(a);
+    find(a);
 
     return 0;
 }
 
-/*Write a program that performs the following tasks:
+/* 01 Write a program that performs the following tasks:
 
 Finds the starting positions (0-based index) of the substrings "are" and "i" in a given input string.
 Calculates and prints the sum of these two positions.
@@ -37,3 +38,6 @@ Print the sum of the starting positions of the substrings "are" and "i" in the f
 
 Sum = <sum>
 */
+
+
+

@@ -32,7 +32,7 @@ int find(int* arr, int size)
 
 	return sum;
 }
-/*You are given a sorted array A of size N containing integers. Every element in the array appears exactly twice, except for one element that appears only once. Your task is to find and print that unique element.
+/* 02 You are given a sorted array A of size N containing integers. Every element in the array appears exactly twice, except for one element that appears only once. Your task is to find and print that unique element.
 
 📌 Constraints
 The array is sorted in non-decreasing order.
