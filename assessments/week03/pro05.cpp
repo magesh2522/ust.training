@@ -35,4 +35,4 @@ void fun(int* arr, int size)
 		}
 	}
 
-}
+}                                                                                        
