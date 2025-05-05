@@ -27,5 +27,8 @@
     <ClCompile Include="pro04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pro05.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
