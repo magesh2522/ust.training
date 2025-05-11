@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pro01.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pro02.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pro03.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pro4.cpp">
+    <ClCompile Include="pro04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pro05.cpp">
@@ -33,7 +30,7 @@
     <ClCompile Include="pro06.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="day07.cpp">
+    <ClCompile Include="pro07.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="pro08.cpp">
@@ -45,22 +42,5 @@
     <ClCompile Include="pro10.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pro11.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pro12.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pro13.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="pro15.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="day07.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
