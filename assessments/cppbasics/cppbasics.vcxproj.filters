@@ -168,5 +168,8 @@
     <ClCompile Include="prg51.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="prg52.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
