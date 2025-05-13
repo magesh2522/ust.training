@@ -16,7 +16,6 @@ int main() {
 
 	printf("address of ptr1=5u and it value =%u\n", &ptr1, ptr1);
 
-	printf("\nptr1 is ")
 
 	
 
