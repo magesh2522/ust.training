@@ -44,6 +44,7 @@ int calculateSalary(ED* e, EP* p, GS* s) {
 	double tax = (s->taxPersentage / 100.0) * gross;
 	double net = gross - tax;
 
+
 	cout << "************* salary_slip ***************" << endl;
 	cout << "Enter the EmpId =" << e->empId << endl;
 	cout << "Enter the EmpName =" << e->empName<< endl;
