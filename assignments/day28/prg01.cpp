@@ -2,13 +2,13 @@
 #define MAX 200
 using namespace std;
 
-class arrcal
+class array
 {
 private:
 	int arr[MAX];
 	int size = 5;
 public:
-	arrcal(int a[], int s)
+	array(int a[], int s)
 	{
 		for (int i = 0;i < s;i++)
 		{
@@ -82,7 +82,7 @@ int main()
 	{
 		cin >> arr[i];
 	}
-	arrcal ar(arr, size);
+	array ar(arr, size);
 	ar.biggestArr();
 	int maxx = ar.biggestArr();
 	cout << maxx << endl;;
