@@ -7,7 +7,7 @@ private:
     string flightNumber;
 	int totalSeats;
 	int bookedSeats;
-	public:
+public:
 		Flight(string fNumber, int seats) {
 			flightNumber = fNumber;
 			totalSeats = seats;

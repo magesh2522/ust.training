@@ -17,15 +17,23 @@ public:
 	void bookRoom()
 	{
 		isBooked = true;
-		cout << "Room" << roomNumber << "(" << type << ")is now booked." << endl;
+		//cout << "Room" << roomNumber << "(" << type << ")is now booked." << endl;
 
 
 	}
 	void showStatus() {
+		if(isBooked = true)
+		{
 
-		cout << "Room Number" << roomNumber << endl;
-		cout << "Room Type" << type<< endl;
-		cout << "Booking status" << (isBooked ? "Booked" : "available") << endl;
+			cout << "Room" << roomNumber;
+			cout << "(" << type << ")is now booked.";
+			//cout << "Booking status" << (isBooked ? "Booked" : "available") << endl;
+		}
+		else {
+			cout << "Room Alredy Booked ";
+
+		}
+
 
 	}
 
