@@ -28,26 +28,27 @@ public:
 		return 350 * codHours;
 	}
 };
-class Manager : 
+class ProjectManager : 
 	public Employee
 {
 protected:
 	int size;
 public:
-	Manager(int size, int empid, string name) :Employee(empid, name)
+	ProjectManager(int size, int empid, string name) :Employee(empid, name)
 	{
 		this->size = size;
 
 	}
 };
-class technicalLead :public developer, Manager
+class technicalLead :
+	public developer, ProjectManager
 {
 	int calculateSalary(int codHours, int size)
 	{
-		return (codHours * 500) + (size * 5000);
+		return (codHours * 450) + (size * 5000);
 	}
 public:
-	technicalLead(int size, int empid, string name, int codHours) :developer(codHours, empid, name), Manager(size, empid, name)
+	technicalLead(int size, int empid, string name, int codHours) :developer(codHours, empid, name), ProjectManager(size, empid, name)
 	{}
 	void disply()
 	{
