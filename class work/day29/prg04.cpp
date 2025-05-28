@@ -6,22 +6,26 @@ using namespace std;
 
 class node
 {
-private:
+public:
 
 	int data;
-	class node* next;
+	node* next;
 
-	node* createNode();
-	node* addNodeBeg(node*, node*);
-	node* addNodeEnd(node*, node*);
-	int dispList(node*);
-	int dispMenu();
-};class LList
+	node(int value) {
+		data = value;
+		next = nullptr;
+	}
+};
+class LList
 {
 private:
-	node* n;
+	node* head;
 public:
-	LList(
+	LList() {
+		head = nullptr;
+
+	
+	}
 
 
 
