@@ -9,7 +9,7 @@ int main() {
 	string value;
 	cin >> value;
 
-	int freq[10] = { 0 };
+	int freq[10] = { 0 };//create array 0to9
 
 	for (char ch : value) {//count freq each object
 		freq[ch-'0']++;
@@ -17,9 +17,9 @@ int main() {
 	int maxVal = INT_MIN;
 	int minVal = INT_MAX;
 
-	for (int i = 0;i < 10;++i) {
+	for (int i = 0;i < 10;i++) {
 		if (freq[i] > 0) {
-			int dvalue = i * freq[i];
+			int dvalue = i * freq[i];//2x2 = 2 like that
 			if (dvalue > maxVal)maxVal = dvalue;
 			if (dvalue > minVal)minVal = dvalue;
 
