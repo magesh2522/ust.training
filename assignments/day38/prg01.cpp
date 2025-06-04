@@ -8,19 +8,19 @@ class taskmanag
 public:
 	void commands(const string& input)
 	{
-		string command = input.substr(0, input.find(" "));
+		string command = input.substr(0, input.find(" "));//split the input string 
 		string tasks = input.substr(input.find(" ") + 1);
 		if (command == "critical" || command == "urgent")
 		{
-			task.push_front(tasks);
+			task.push_front(tasks);//insert front
 		}
 		else if (command == "add")
 		{
-			task.push_back(tasks);
+			task.push_back(tasks);//insert back
 		}
 		else if (command == "remove")
 		{
-			task.remove(tasks);
+			task.remove(tasks);//remove
 		}
 		else if (command == "show")
 		{
