@@ -18,7 +18,6 @@ int main() {
     // Remove duplicates elements
     words.erase(std::unique(words.begin(), words.end()), words.end());
 
-    // Print result
     for (const auto& word : words) {
         std::cout << word << " ";
     }

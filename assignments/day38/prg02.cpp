@@ -1,31 +1,34 @@
 #include <iostream>
-#include <list>
+#include <vector>
 #include <string>
-
+/// <summary>
+/// error
+/// </summary>
 using namespace std;
 
 int main() {
-    list<string> textBuffer;
-    auto cursor = textBuffer.end(); // Iterator representing the current position
+    vector<string> textBuffer;
+    int cursor = 0; // Index representing the current position
 
     string command, line;
     while (cin >> command) {
         if (command == "Insert") {
             cin.ignore();
             getline(cin, line);
-            textBuffer.insert(cursor, line);
+            textBuffer.insert(textBuffer.begin() + cursor, line);
+            cursor++;
         }
         else if (command == "UP") {
-            if (cursor != textBuffer.begin()) {
-                --cursor;
+            if (cursor > 0) {
+                cursor--;
             }
         }
-        else if (command == "down") {
-            if (cursor != textBuffer.end()) {
-                ++cursor;
+        else if (command == "DOWN") {
+            if (cursor < textBuffer.size()) {
+                cursor++;
             }
         }
-        else if (command == "print") {
+        else if (command == "Print") {
             for (const auto& str : textBuffer) {
                 cout << str << endl;
             }
