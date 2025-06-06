@@ -7,12 +7,12 @@ int main() {
 
     // Remove messages starting with "DELETED:"
     messages.remove_if([](const std::string& msg) {
-        return msg.rfind("DELETED:", 0) == 0; // Check if the string starts with "DELETED:"
+        return msg.rfind("DELETED:", 0) == 0; // Check if th starts with "DELETED:"
         });
 
     // Print the cleaned chat history
-    for (const auto& msg : messages) {
-        std::cout << msg << " ";
+    for (const auto& msg :messages){
+   
     }
 
     return 0;

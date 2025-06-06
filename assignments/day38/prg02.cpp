@@ -1,34 +1,31 @@
 #include <iostream>
-#include <vector>
+#include <deque>
 #include <string>
-/// <summary>
-/// error
-/// </summary>
+
 using namespace std;
 
 int main() {
-    vector<string> textBuffer;
-    int cursor = 0; // Index representing the current position
+    deque<string> textBuffer;
+    auto cursor = textBuffer.end(); // Iterator representing the current position
 
     string command, line;
     while (cin >> command) {
-        if (command == "Insert") {
+        if (command == "INSERT") {
             cin.ignore();
             getline(cin, line);
-            textBuffer.insert(textBuffer.begin() + cursor, line);
-            cursor++;
+            textBuffer.insert(cursor, line);
         }
         else if (command == "UP") {
-            if (cursor > 0) {
-                cursor--;
+            if (cursor != textBuffer.begin()) {
+                --cursor;
             }
         }
         else if (command == "DOWN") {
-            if (cursor < textBuffer.size()) {
-                cursor++;
+            if (cursor != textBuffer.end()) {
+                ++cursor;
             }
         }
-        else if (command == "Print") {
+        else if (command == "PRINT") {
             for (const auto& str : textBuffer) {
                 cout << str << endl;
             }
