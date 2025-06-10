@@ -234,14 +234,21 @@ public:
 
     Microprocessor() : AX(0), BX(0), CX(0), DX(0) {}
 
-    void MOV(int& dest, int src) { dest = src; }
-    void MOV_MEM(int addr, int value) { memory[addr] = value; }
-    void MOV_REG_TO_MEM(int addr, int& src) { memory[addr] = src; }
+    void MOV(int& dest, int src) { dest = src; }//register value
+    void MOV_MEM(int addr, int value) { memory[addr] = value; }//memory address
+    void MOV_REG_TO_MEM(int addr, int& src) { memory[addr] = src; }//register to memory
     void MOV_MEM_TO_REG(int& dest, int addr) { dest = memory[addr]; }
 
-    void ADD(int& val1, int val2) { val1 += val2; }
-    void SUB(int& val1, int val2) { val1 -= val2; }
-    void MUL(int& val1, int val2) { val1 *= val2; }
+    //operator 
+    void ADD(int& val1, int val2) {
+        val1 += val2;
+    }
+    void SUB(int& val1, int val2) {
+        val1 -= val2; 
+    }
+    void MUL(int& val1, int val2) {
+        val1 *= val2; 
+    }
     void DIV(int& val1, int val2) {
         if (val2 != 0) val1 /= val2;
         else cout << "Error: Division by zero!" << endl;
@@ -271,16 +278,21 @@ public:
             else if (log == "SUB") {
                 SUB(GetRegister(arg1), GetRegister(arg2));
             }
-            else if (log == "MUL") {
+            else if (log == "MUL") 
+            {
                 MUL(GetRegister(arg1), GetRegister(arg2));
             }
-            else if (log == "DIV") {
+            else if (log == "DIV")
+            {
                 DIV(GetRegister(arg1), GetRegister(arg2));
             }
-            else if (log == "HLT") {
+            else if (log == "HLT")
+            {
                 cout << "Halting Execution!" << endl;
             }
-            else {
+            else 
+            
+            {
                 cout << "Error: Invalid instruction - " << instruction << endl;
             }
         }
