@@ -14,9 +14,9 @@ void PrintQueue(std::queue<PrintJob>& printQueue) {
 
         int remainPages = job.pages;
         while (remainPages > 0) {
-            int pagesToPrint = std::min(remainPages, 10);
-            std::cout << "Printing " << pagesToPrint << " pages for user: " << job.name << std::endl;
-            remainPages -= pagesToPrint;
+            int pagesPrint = std::min(remainPages, 10);
+            std::cout << "Printing " << pagesPrint << " pages for user: " << job.name << std::endl;
+            remainPages -= pagesPrint;
         }
     }
 }

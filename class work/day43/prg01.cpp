@@ -119,3 +119,31 @@ int main() {
 
     return 0;
 }
+
+#include <iostream>
+#include <vector>
+#include <stack>
+
+void printNGE(const std::vector<int>& arr) {
+    std::vector<int> nge(arr.size(), -1); // Initialize result array with -1
+    std::stack<int> s; // Stack to keep track of elements' indices
+
+    for (int i = 0; i < arr.size(); ++i) {
+        while (!s.empty() && arr[s.top()] < arr[i]) {
+            nge[s.top()] = arr[i];
+            s.pop();
+        }
+        s.push(i);
+    }
+
+    // Output the result
+    for (int i = 0; i < arr.size(); ++i) {
+        std::cout << arr[i] << " --> " << nge[i] << std::endl;
+    }
+}
+
+int main() {
+    std::vector<int> arr = { 4, 5, 2, 25, 7, 8 }; // Input array
+    printNGE(arr);
+    return 0;
+}
