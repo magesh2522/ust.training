@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class problem
+class pro
 {
 public:
 	bool solution(char* arr)
@@ -55,8 +55,8 @@ public:
 int main()
 {
 
-	problem p;
-	cout << "It is : " << (p.solution((char*)"{([]([)])[]}") ? "Balance" : "Unbalance") << endl;
-	cout << "It is : " << (p.solution((char*)"{([]()[])[]}") ? "Balance" : "Unbalance") << endl;
+	pro p;
+	cout << "Un_Proper : " << (p.solution((char*)"{([]([)])[]}") ? "Balance" : "Unbalance") << endl;
+	cout << "Proper : " << (p.solution((char*)"{([]()[])[]}") ? "Balance" : "Unbalance") << endl;
 
 }
