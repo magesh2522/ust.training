@@ -5,25 +5,11 @@
 using namespace std;
 
 char flag = 0;
-
-class Problem
-{
 	mutex m;
-
-public:
-	void fun(int n)
-	{
-		thread t1(&Problem::solution, this, n, "fizz", 0, 3);
-		thread t2(&Problem::solution, this, n, "buzz", 1, 5);
-		thread t3(&Problem::solution, this, n, "fizzbuzz", 2, 15);
-		thread t4(&Problem::solution, this, n, "none", 3, 1);
-		t1.join();
-		t2.join();
-		t3.join();
-		t4.join();
-	}
+	
 	void solution(int N, string word, char enable, char functionality)
 	{
+		
 
 		for (int i = 1; i < N; )
 		{
@@ -62,12 +48,31 @@ public:
 			}
 		}
 
+
+
+
+
+
+
+
+
+
+
 	}
-};
 
 
 int main()
 {
-	Problem p;
-	p.fun(40);
+	int n;
+	cin >> n;
+	
+		thread t1(solution,n, "fizz", 0, 3);
+		thread t2(solution, n, "buzz", 1, 5);
+		thread t3(solution, n, "fizzbuzz", 2, 15);
+		thread t4(solution,  n, "none", 3, 1);
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+	
 }

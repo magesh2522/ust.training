@@ -6,12 +6,12 @@ using namespace std;
 
 mutex mtx;
 condition_variable cv;
-bool pingTurn = true; 
+bool pingTurn = true;
 
-void print(const string& text, bool flag) {
+void print(const string& text, bool check) {
     for (int i = 0; i < 10; ++i) {
         unique_lock<mutex> lock(mtx);
-        cv.wait(lock, [&] { return pingTurn == flag; });
+        cv.wait(lock, [&]{ return pingTurn == check; });
         cout << text << endl;
         pingTurn = !pingTurn;
         cv.notify_one();
