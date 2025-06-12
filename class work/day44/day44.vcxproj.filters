@@ -51,5 +51,11 @@
     <ClCompile Include="prg12.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="prg13.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="prg14.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
