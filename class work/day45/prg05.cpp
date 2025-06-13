@@ -1,73 +1,99 @@
 #include <iostream>
 #include <thread>
 #include <mutex>
-#include<fstream>
-#include <istream>
+#include <fstream>
 #include <sstream>
 #include <vector>
-#include <condition_variable>
 #include <chrono>
-
+#include <queue>
 
 using namespace std;
 
-
 mutex m1;
-struct Task {
-	string id;
-	int load;
+
+class Task {
+public:
+    string id;
+    int load;
+
+    Task(const string& tid, int l) : id(tid), load(l) {}
 };
-//task function ::
 
-void processTask(Task task, int cpuId) {
-    {
-        lock_guard<mutex> lock(m1);
+class TaskScheduler {
+private:
+    int cpuCount;
+    queue<Task> tasks;
 
-        cout << "CPU->" << cpuId << " picked Task " << task.id << " (Load: " << task.load << ")\n";
+public:
+    bool loadTasks(const string& filename) {
+        ifstream file(filename);
+        if (!file.is_open()) {
+            cerr << "File opening error.\n";
+            return false;
+        }
+
+        string line, temp;
+        getline(file, line);  // First line: CPU count
+        istringstream pair(line);
+        pair >> temp >> cpuCount;
+
+        while (getline(file, line)) {
+            istringstream taskstream(line);
+            string id;
+            int load;
+            taskstream >> id >> temp >> load;
+            tasks.emplace(id, load);
+        }
+
+        file.close();
+        return true;
     }
-	this_thread::sleep_for(chrono::seconds(task.load));
 
-    {
-        lock_guard<mutex> lock(m1);
+    void runTasks() {
+        vector<thread> threads;
+        for (int i = 0; i < cpuCount; ++i) {
+            threads.emplace_back(&TaskScheduler::worker, this, i);
+        }
 
-        cout << "CPU->" << cpuId << " finished Task " << task.id << "\n";
+        for (auto& t : threads) {
+            t.join();
+        }
+
+        cout << "All tasks completed.." << endl;
     }
-}
+
+private:
+    void worker(int cpuId) {
+        while (true) {
+            Task task("", 0);
+
+            {
+                lock_guard<mutex> lock(m1);
+                if (tasks.empty()) {
+                    return;
+                }
+                task = tasks.front();
+                tasks.pop();
+                cout << "CPU->" << cpuId << " picked Task " << task.id << " (Load: " << task.load << ")\n";
+            }
+
+            this_thread::sleep_for(chrono::seconds(task.load));
+
+            {
+                lock_guard<mutex> lock(m1);
+                cout << "CPU->" << cpuId << " finished Task " << task.id << "\n";
+            }
+        }
+    }
+};
 
 int main() {
-    string line;
-    int cpuCount = 0;
-    vector<Task> tasks;
+    TaskScheduler scheduler;
 
-    ifstream file("input.txt");//file linking 
-    if (!file) {
-        cout << "File opening error :" << endl;
+    if (!scheduler.loadTasks("input.txt")) {
         return 1;
     }
 
-    getline(file, line);       // Read CPU count
-    istringstream page(line);
-    string temp;
-    page >> temp >> cpuCount;
-
-    while (getline(file, line)) { // Read tasks
-        istringstream taskstream(line);
-        Task task;
-        taskstream >> task.id >> temp >> task.load;
-        tasks.push_back(task);
-    }
-
-    vector<thread> threads;    // Create threads for each task
-     for (size_t i = 0; i < tasks.size(); i++) {
-        int cpuId = i % cpuCount;
-        threads.emplace_back(processTask, tasks[i], cpuId);
-    }
-
-    // Join threads AFTER creating them all
-    for (auto& t : threads) {
-        t.join();
-    }
-
+    scheduler.runTasks();
     return 0;
 }
-

@@ -1,0 +1,41 @@
+Bob placed $120.000000 on Painting
+Bob placed $250.000000 on Watch
+Charlie placed $150.000000 on Painting
+Auction Closed: Painting
+Winner: Charlie with $150
+
+Auction Closed: Watch
+Winner: Bob with $250
+
+Charlie placed $150.000000 on Painting
+Bob placed $250.000000 on Watch
+Auction Closed: Painting
+Winner: Charlie with $150
+
+Auction Closed: Watch
+Winner: Bob with $250
+
+Bob placed $250.000000 on WatchCharlie placed $150.000000 on Painting
+
+Auction Closed: Painting
+Winner: Charlie with $150
+
+Auction Closed: Watch
+Winner: Bob with $250
+
+Charlie placed $150.000000 on Painting
+Bob placed $250.000000 on Watch
+Auction Closed: Painting
+Winner: Charlie with $150
+
+Auction Closed: Watch
+Winner: Bob with $250
+
+Bob placed $250.000000 on Watch
+Charlie placed $150.000000 on Painting
+Auction Closed: Painting
+Winner: Charlie with $150
+
+Auction Closed: Watch
+Winner: Bob with $250
+
