@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c9f48cd1-0fd6-43fc-a496-65841dbf2b5a}</ProjectGuid>
-    <RootNamespace>week09</RootNamespace>
+    <ProjectGuid>{9dcfebc4-a394-46c3-8107-829fe5806d3a}</ProjectGuid>
+    <RootNamespace>day46</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MobileRecords.cpp">
+    <ClCompile Include="prg01.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="prg01.cpp" />
+    <ClCompile Include="prg02.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="defects.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

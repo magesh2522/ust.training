@@ -1,0 +1,2 @@
+101 magesh IT emp1 active
+102 manu HR emp2 locked

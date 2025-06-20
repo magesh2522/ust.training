@@ -1,0 +1,3 @@
+admi1 adminpass admin
+manager1 managerpass manager
+emp1 emppass employee

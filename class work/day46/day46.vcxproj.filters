@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MobileRecords.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="prg01.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

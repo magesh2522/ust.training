@@ -56,7 +56,7 @@ bool login() {
 }
 
 struct CustomerBilling {
-    string msisdn;//MSDIN MAX_LENGTH is 7
+    string MSISDN;//MSDIN MAX_LENGTH is 7
     string brand;//gere brand means type of sim like (airtel or jio) kind of
     string mmc;//mmc contry code 6
     int inInter = 0, outInter = 0;
@@ -94,7 +94,7 @@ vector<string>split(string line, char delimiter) {//removing the simbles so here
 CustomerBilling* getCustomer(string msisdn, string brand, string mmc) {
     for (auto& a : customers) //addressing the customers 
     {//itreating a customer 
-        if (a.msisdn == msisdn)
+        if (a.MSISDN == msisdn)
             return &a;
     }
     customers.push_back({ msisdn, brand, mmc });
@@ -130,8 +130,8 @@ void searchCustomerBilling() {
 
     for (auto& c : customers)
     {
-        if (c.msisdn == msisdn) {//if customers and msisdn is same will get the below cout details 
-            cout << "\nCustomer ID: " << c.msisdn << " (" << c.brand << ")\n";
+        if (c.MSISDN == msisdn) {//if customers and msisdn is same will get the below cout details 
+            cout << "\nCustomer ID: " << c.MSISDN << " (" << c.brand << ")\n";
             cout << "* Services within the mobile operator \n";
             cout << "Incoming:  | Outgoing:  \n";
             cout << "* Services outside the mobile operator \n";
@@ -147,7 +147,7 @@ void searchCustomerBilling() {
         ofstream out("data.cdr");
         for (auto& c : customers) 
         {
-            out << "Customer ID: " << c.msisdn << " (" << c.brand << ")\n";
+            out << "Customer ID: " << c.MSISDN << " (" << c.brand << ")\n";
             out << "In-Internal:  Out-Internal << \n";
             out << "In-External:  Out-External:  \n";
         }
@@ -219,7 +219,6 @@ void searchCustomerBilling() {
                     cout << "1. Search MSISDN\n2. Save to CB.txt\nChoice: ";
                     cin >> opt; 
                     if (opt == 1) searchCustomerBilling();
-
                 }
             }
             else if (choice == 3) 
