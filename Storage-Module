@@ -1,0 +1,109 @@
+GW-BASIC---------> Storage 
+⦁	GW-BASIC (Gee-Whiz BASIC) is a variant of the BASIC (Beginner’s All-purpose Symbolic Instruction Code) programming language, which was developed by Microsoft for early personal computers. It was first introduced in 1983 and became widely popular on MS-DOS systems and early IBM-compatible PCs.
+⦁	GW-BASIC is an interpreted language that allows users to write simple yet powerful programs using a series of straightforward commands. Unlike compiled languages, programs written in GW-BASIC are executed line-by-line, which made it accessible for beginners and useful for quick prototyping and simple application development.
+⦁	While GW-BASIC was widely used in the 1980s and early 1990s, it has since been replaced by more modern programming languages, though its influence on the development of later languages remains significant.
+⦁	GW-BASIC is an interpreter for the BASIC programming language that was popular in the 1980s, particularly on IBM PC-compatible computers. It supports a variety of programming features such as:
+⦁	Procedural programming – This allows for structured programming through subroutines and functions.
+⦁	Interactive environment – You can enter and run commands interactively, providing immediate feedback.
+⦁	Line numbering – A key feature of GW-BASIC is its reliance on numbered lines, though later versions allowed for more modern syntax.
+⦁	Control flow – GW-BASIC includes standard constructs like loops (FOR-NEXT), conditional branching (IF-THEN-ELSE), and case-switch statements.
+⦁	Graphics and sound – It offers limited support for graphics and sound, making it great for early educational games and simple applications.
+gw_basic/
+  ├── GWBasic64.h
+  ├── GWBasic64.cpp
+  ├── Storage/
+  │   ├── ProgramMemory.h
+  │   └── ProgramMemory.cpp
+
+
+The Storage module seems to contain the following files:
+⦁	ProgramMemory.h
+⦁	ProgramMemory.cpp
+
+
+ Overview of the "Storage" Module
+⦁	The Storage module likely handles the management of memory where programs or data are stored. The key component here seems to be the ProgramMemory class (or related classes). The module might serve several purposes such as:
+⦁	Allocating memory to store program data.
+⦁	Managing the read/write operations of that memory.
+⦁	Handling memory overflow or out-of-bound errors.
+⦁	Ensuring memory is used efficiently by the GW-Basic interpreter.
+
+Documentation Outline
+⦁	The typical structure of the documentation will contain:
+
+
+Documentation Outline
+1.	Introduction
+2.	Dependencies
+3.	Class Descriptions
+4.	Public Methods
+5.	Internal Data Members
+
+
+Introduction
+The Storage module handles all memory-related operations within the GW-Basic 64 interpreter. Specifically, the ProgramMemory class is responsible for managing program memory. This includes allocating memory for variables, handling read/write operations, and performing memory cleanup tasks. The module aims to provide a reliable memory management system that allows the interpreter to execute programs efficiently.
+
+
+Dependencies
+GWBasic64.h/cpp: Core class that integrates with the storage system.
+Parser.h/cpp: Required for parsing and storing program statements.---->Suvetha
+Lexer.h/cpp: Required to tokenize the program's source code.---->Vaishnavi
+Runtime/ExpressionEvaluator.h/cpp: Evaluates expressions and needs access to the program memory.---->Niviya
+
+
+Class Descriptions
+⦁	ProgramMemory
+	The ProgramMemory class is responsible for managing the memory used by the 	interpreter. It provides mechanisms to allocate, deallocate, and retrieve memory 	blocks used for variables, arrays, or other types of data in the program.
+
+Public Methods:
+⦁	ProgramMemory()
+Constructor: Initializes the memory storage with default settings.
+⦁	allocate(size_t size)
+Description: Allocates a block of memory of the given size.
+⦁	deallocate(void* pointer)
+Description: Deallocates a previously allocated block of memory.
+⦁	getMemoryUsage() const
+Description: Returns the current memory usage.
+⦁	clearMemory()
+Description: Clears all allocated memory, ensuring that the storage is freed.
+
+Internal Data Members:
+⦁	std::vector<uint8_t> memory
+Holds the allocated memory for the program. Each byte represents a unit of memory, and this data structure supports dynamic resizing.
+⦁	size_t memorySize
+Tracks the current size of the allocated memory.
+⦁	size_t usedMemory
+Tracks the amount of memory that is currently in use.
+
+Here’s a simple class diagram for the ProgramMemory class.
+
++------------------------+
+|      ProgramMemory      |
++------------------------+
+| - memory: std::vector   |
+| - memorySize: size_t    |
+| - usedMemory: size_t    |
++------------------------+
+| + ProgramMemory()       |
+| + allocate(size_t)      |
+| + deallocate(void*)     |
+| + getMemoryUsage()      |
+| + clearMemory()         |
++------------------------+
+
+
+Responsibilities:
+⦁	Manages variable data (integers, floats, arrays, etc.).
+⦁	Allows adding, retrieving, and updating variables.
+⦁	Tracks variable scope (local vs. global).
+
+Design and Methods:
+⦁	addVariable(): Adds a new variable to the memory with a given type and value.
+⦁	getVariable(): Retrieves the value of a variable from memory.
+⦁	updateVariable(): Updates an existing variable's value.
+removeVariable(): Frees memory occupied by a variable.
+
+
+Conclusion
+⦁	The Storage Module plays a vital role in the GW-Basic 64 interpreter, ensuring efficient memory management and supporting the core functionality of the system. By handling the dynamic allocation, storage, and retrieval of program lines and variables, the ProgramMemory class contributes to the smooth execution of GW-Basic programs. With methods like storeLine(), getAllLines(), and clearMemory(), the module efficiently manages program memory, allows users to interact with their code, and enables other system components like the parser and runtime to access memory when needed.
+⦁	Furthermore, the modular design of the Storage Module allows it to integrate seamlessly with other parts of the interpreter, such as the lexer, parser, and runtime engine. This ensures a cohesive system where memory-related operations are tightly controlled, and resources are used efficiently.
