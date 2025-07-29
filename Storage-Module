@@ -11,14 +11,11 @@ The Storage module seems to contain the following files:
 ⦁	ProgramMemory.h
 ⦁	ProgramMemory.cpp
 
+Overview:
 
- Overview of the "Storage" Module
-⦁	The Storage module likely handles the management of memory where programs or data are stored. The key component here seems to be the ProgramMemory class (or related classes). The module might serve several purposes such as:
-⦁	Allocating memory to store program data.
-⦁	Managing the read/write operations of that memory.
-⦁	Handling memory overflow or out-of-bound errors.
-⦁	Ensuring memory is used efficiently by the GW-Basic interpreter.
-
+The ProgramMemory module is designed to store and manage lines of code associated with specific line numbers, similar to how BASIC programs are structured. 
+It uses a std::map to maintain the order and quick access of lines, allowing features like adding, updating, deleting, listing, and renumbering lines. 
+The module also supports saving and loading program lines from files using a system interface, enabling persistent storage.
 
 
 
