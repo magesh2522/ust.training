@@ -22,83 +22,92 @@ The Storage module seems to contain the following files:
 
 
 
-Documentation Outline
-1.	Introduction
-2.	Dependencies
-3.	Class Descriptions
-4.	Public Methods
-5.	Internal Data Members
+Public Methods Overview:
+ProgramMemory()
+Description:
+Constructor. Initializes an empty program memory.
+
+void storeLine(int lineNumber, const std::string& code)
+Description:
+Stores or updates a line of code in memory.
+If the code is empty, the line is deleted.
+Throws: std::invalid_argument for negative line numbers.
+
+void storeLine(const std::string& line)
+Description:
+Parses a full input string like "10 PRINT "HELLO" and stores it after separating the line number and code.
+Throws: std::invalid_argument if line number is missing or invalid.
+
+std::map<int, std::string> getAllLines() const
+Description:
+Returns a copy of the internal memory map.
+
+void list() const
+Description:
+Prints all stored lines to the system using SystemInterface::printString.
+
+std::vector<std::string> getLineNumbers() const
+Description:
+Returns a list of all line numbers as strings.
+
+void clearMemory()
+Description:
+Clears the entire program memory.
+
+bool saveToFile(const std::string& path) const
+Description:
+Saves all stored program lines to a file.
+Uses: SystemInterface::createAndSaveFile
+
+bool loadFromFile(const std::string& path)
+Description:
+Loads program lines from a file, replacing current memory.
+Uses:
+
+SystemInterface::openFile()
+
+SystemInterface::readLineFromFile()
+
+SystemInterface::closeFile()
+
+Returns false if the file cannot be opened.
+
+bool lineExist(int lineNumber) const
+Description:
+Checks if a specific line number exists in memory.
+
+void deleteLine(int lineNumber)
+Description:
+Deletes a line with the given line number from memory.
+
+std::string getLine(int lineNumber) const
+Description:
+Returns the code corresponding to the given line number (or empty string if not found).
+
+void renumber(int newStart, int oldStart, int increment)
+Description:
+Renumbers all lines starting from oldStart, assigning new numbers starting at newStart with increment step.
+Lines below oldStart remain unchanged.
+
+int getFirstLineNumber() const
+Description:
+Returns the smallest line number in memory or -1 if memory is empty.
+
+int getNextLineNumber(int current) const
+Description:
+Returns the next higher line number after current, or -1 if none.
+
+Private Members:
+cpp
+Copy
+Edit
+std::map<int, std::string> memory;
+Description:
+Stores the program lines in a sorted map (automatically sorted by line number).
 
 
-Introduction
-The Storage module handles all memory-related operations within the GW-Basic 64 interpreter. Specifically, the ProgramMemory class is responsible for managing program memory. This includes allocating memory for variables, handling read/write operations, and performing memory cleanup tasks. The module aims to provide a reliable memory management system that allows the interpreter to execute programs efficiently.
-
-
-Dependencies
-GWBasic64.h/cpp: Core class that integrates with the storage system.
-Parser.h/cpp: Required for parsing and storing program statements.
-Lexer.h/cpp: Required to tokenize the program's source code.
-Runtime/ExpressionEvaluator.h/cpp: Evaluates expressions and needs access to the program memory.
-
-
-Class Descriptions
-⦁	ProgramMemory
-	The ProgramMemory class is responsible for managing the memory used by the 	interpreter. It provides mechanisms to allocate, deallocate, and retrieve memory 	blocks used for variables, arrays, or other types of data in the program.
-
-Public Methods:
-⦁	ProgramMemory()
-Constructor: Initializes the memory storage with default settings.
-⦁	allocate(size_t size)
-Description: Allocates a block of memory of the given size.
-⦁	deallocate(void* pointer)
-Description: Deallocates a previously allocated block of memory.
-⦁	getMemoryUsage() const
-Description: Returns the current memory usage.
-⦁	clearMemory()
-Description: Clears all allocated memory, ensuring that the storage is freed.
-
-Responsibilities:
-⦁	Manages variable data (integers, floats, arrays, etc.).
-⦁	Allows adding, retrieving, and updating variables.
-⦁	Tracks variable scope (local vs. global).
-
-Design and Methods:
-⦁	addVariable(): Adds a new variable to the memory with a given type and value.
-⦁	getVariable(): Retrieves the value of a variable from memory.
-⦁	updateVariable(): Updates an existing variable's value.
-removeVariable(): Frees memory occupied by a variable.
-
-*Future 
-storeLine(int lineNumber, const std::string& code)
-Purpose: Adds or updates a line of code at a specified line number.
-Use case: Keeps the program memory up-to-date as the user adds or modifies lines.
-
-getAllLines()
-Purpose: Returns a map of all lines in memory.
-Use case: Useful for iterating over the code or saving all lines at once.
-
-list()
-Purpose: Prints all lines to the screen.
-Use case: Display the entire program's content for the user.
-
-storeLine(const std::string& line)
-Purpose: Stores a single line of code (parses the line number and code).
-Use case: Simplifies input parsing for storing program lines.
-
-saveToFile(const std::string& path)
-Purpose: Saves the entire program to a file.
-Use case: Persists the program code to disk for later use.
-
-loadFromFile(const std::string& path)
-Purpose: Loads the program from a file into memory.
-Use case: Allows the program to be resumed from a saved state.
-
-clearMemory()
-Purpose: Clears all lines from memory.
-Use case: Resets the program's memory.
 
 -------------------
-Conclusion
-⦁	The Storage Module plays a vital role in the GW-Basic 64 interpreter, ensuring efficient memory management and supporting the core functionality of the system. By handling the dynamic allocation, storage, and retrieval of program lines and variables, the ProgramMemory class contributes to the smooth execution of GW-Basic programs. With methods like storeLine(), getAllLines(), and clearMemory(), the module efficiently manages program memory, allows users to interact with their code, and enables other system components like the parser and runtime to access memory when needed.
-⦁	Furthermore, the modular design of the Storage Module allows it to integrate seamlessly with other parts of the interpreter, such as the lexer, parser, and runtime engine. This ensures a cohesive system where memory-related operations are tightly controlled, and resources are used efficiently.
-
+Conclusion 
+The ProgramMemory module efficiently manages program lines using line numbers. It supports adding, deleting, listing, renumbering, and file operations. 
+This makes it a key part of any BASIC-like interpreter or REPL system, ensuring simple and organized code storage.
