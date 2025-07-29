@@ -107,3 +107,62 @@ removeVariable(): Frees memory occupied by a variable.
 Conclusion
 ⦁	The Storage Module plays a vital role in the GW-Basic 64 interpreter, ensuring efficient memory management and supporting the core functionality of the system. By handling the dynamic allocation, storage, and retrieval of program lines and variables, the ProgramMemory class contributes to the smooth execution of GW-Basic programs. With methods like storeLine(), getAllLines(), and clearMemory(), the module efficiently manages program memory, allows users to interact with their code, and enables other system components like the parser and runtime to access memory when needed.
 ⦁	Furthermore, the modular design of the Storage Module allows it to integrate seamlessly with other parts of the interpreter, such as the lexer, parser, and runtime engine. This ensures a cohesive system where memory-related operations are tightly controlled, and resources are used efficiently.
+storeLine(int lineNumber, const std::string& code)
+
+Purpose: Adds or updates a line of code at a specified line number.
+
+Use case: Keeps the program memory up-to-date as the user adds or modifies lines.
+
+getAllLines()
+
+Purpose: Returns a map of all lines in memory.
+
+Use case: Useful for iterating over the code or saving all lines at once.
+
+list()
+
+Purpose: Prints all lines to the screen.
+
+Use case: Display the entire program's content for the user.
+
+storeLine(const std::string& line)
+
+Purpose: Stores a single line of code (parses the line number and code).
+
+Use case: Simplifies input parsing for storing program lines.
+
+saveToFile(const std::string& path)
+
+Purpose: Saves the entire program to a file.
+
+Use case: Persists the program code to disk for later use.
+
+loadFromFile(const std::string& path)
+
+Purpose: Loads the program from a file into memory.
+
+Use case: Allows the program to be resumed from a saved state.
+
+clearMemory()
+
+Purpose: Clears all lines from memory.
+
+Use case: Resets the program's memory.
+
+-------------------
+Special Features of ProgramMemory
+Advanced Functionalities:
+
+Renumbering Lines (renumber())
+
+Purpose: Renumbers lines of code within a specified range, adjusting the line numbers.
+
+Why It’s Useful: Helps reorganize code or shift lines without losing data integrity.
+
+Example Use Case: Changing a block of code’s line numbers after the program’s execution flow changes.
+
+Line Existence Check (lineExist())
+
+Purpose: Checks whether a specific line exists in memory.
+
+Why It’s Useful: Allows handling cases where a line might not exist when trying to modify or delete it.
