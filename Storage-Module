@@ -1,13 +1,4 @@
-GW-BASIC---------> Storage 
-⦁	GW-BASIC (Gee-Whiz BASIC) is a variant of the BASIC (Beginner’s All-purpose Symbolic Instruction Code) programming language, which was developed by Microsoft for early personal computers. It was first introduced in 1983 and became widely popular on MS-DOS systems and early IBM-compatible PCs.
-⦁	GW-BASIC is an interpreted language that allows users to write simple yet powerful programs using a series of straightforward commands. Unlike compiled languages, programs written in GW-BASIC are executed line-by-line, which made it accessible for beginners and useful for quick prototyping and simple application development.
-⦁	While GW-BASIC was widely used in the 1980s and early 1990s, it has since been replaced by more modern programming languages, though its influence on the development of later languages remains significant.
-⦁	GW-BASIC is an interpreter for the BASIC programming language that was popular in the 1980s, particularly on IBM PC-compatible computers. It supports a variety of programming features such as:
-⦁	Procedural programming – This allows for structured programming through subroutines and functions.
-⦁	Interactive environment – You can enter and run commands interactively, providing immediate feedback.
-⦁	Line numbering – A key feature of GW-BASIC is its reliance on numbered lines, though later versions allowed for more modern syntax.
-⦁	Control flow – GW-BASIC includes standard constructs like loops (FOR-NEXT), conditional branching (IF-THEN-ELSE), and case-switch statements.
-⦁	Graphics and sound – It offers limited support for graphics and sound, making it great for early educational games and simple applications.
+
 gw_basic/
   ├── GWBasic64.h
   ├── GWBasic64.cpp
@@ -28,8 +19,7 @@ The Storage module seems to contain the following files:
 ⦁	Handling memory overflow or out-of-bound errors.
 ⦁	Ensuring memory is used efficiently by the GW-Basic interpreter.
 
-Documentation Outline
-⦁	The typical structure of the documentation will contain:
+
 
 
 Documentation Outline
@@ -46,9 +36,9 @@ The Storage module handles all memory-related operations within the GW-Basic 64 
 
 Dependencies
 GWBasic64.h/cpp: Core class that integrates with the storage system.
-Parser.h/cpp: Required for parsing and storing program statements.---->Suvetha
-Lexer.h/cpp: Required to tokenize the program's source code.---->Vaishnavi
-Runtime/ExpressionEvaluator.h/cpp: Evaluates expressions and needs access to the program memory.---->Niviya
+Parser.h/cpp: Required for parsing and storing program statements.
+Lexer.h/cpp: Required to tokenize the program's source code.
+Runtime/ExpressionEvaluator.h/cpp: Evaluates expressions and needs access to the program memory.
 
 
 Class Descriptions
@@ -66,31 +56,6 @@ Description: Deallocates a previously allocated block of memory.
 Description: Returns the current memory usage.
 ⦁	clearMemory()
 Description: Clears all allocated memory, ensuring that the storage is freed.
-
-Internal Data Members:
-⦁	std::vector<uint8_t> memory
-Holds the allocated memory for the program. Each byte represents a unit of memory, and this data structure supports dynamic resizing.
-⦁	size_t memorySize
-Tracks the current size of the allocated memory.
-⦁	size_t usedMemory
-Tracks the amount of memory that is currently in use.
-
-Here’s a simple class diagram for the ProgramMemory class.
-
-+------------------------+
-|      ProgramMemory      |
-+------------------------+
-| - memory: std::vector   |
-| - memorySize: size_t    |
-| - usedMemory: size_t    |
-+------------------------+
-| + ProgramMemory()       |
-| + allocate(size_t)      |
-| + deallocate(void*)     |
-| + getMemoryUsage()      |
-| + clearMemory()         |
-+------------------------+
-
 
 Responsibilities:
 ⦁	Manages variable data (integers, floats, arrays, etc.).
