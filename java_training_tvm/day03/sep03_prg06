@@ -1,0 +1,59 @@
+package september01;
+
+import java.util.Scanner;
+
+public class prg06 {
+public static void main(String[]args) {
+	Scanner sc=new Scanner(System.in);
+	
+	String name="magesh";
+	
+	int attempt=3;
+	
+	while(attempt>0) {
+		System.out.println("Enter the user Name:");
+		String username=sc.nextLine();
+		
+		int otp=(int)(Math.random()*9000)+1000;
+		System.out.println("Generate otp is "+otp);
+		
+		
+		System.out.println("Enter the Otp");
+		int userInput=sc.nextInt();
+		
+		
+		
+		
+		if(otp==userInput) {
+			System.out.println("Sucessfully validate password");
+			break;
+			
+		}
+		
+		
+
+	if(username==name ) {
+		System.out.println("sucessfully validate:"+username);
+		
+		break;
+	}
+	else {
+		attempt--;
+		System.out.println("Invalied input!!!");
+	}
+		
+		if(attempt>0) {
+			System.out.println("you have only " +attempt+"chance");
+		}
+		else {
+			System.out.println("Account Locked");
+			sc.close();
+			
+			
+	}
+		
+	}
+	
+	
+}
+}
