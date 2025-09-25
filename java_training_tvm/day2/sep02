@@ -1,0 +1,23 @@
+package com.Aug29;
+import java.util.Scanner;
+
+
+public class prg03 {
+public static void main(String[]args) {
+	Scanner mag=new Scanner(System.in);
+	
+	String name=mag.nextLine();
+	double mark=mag.nextDouble();
+	mag.nextLine();
+	
+	String department=mag.nextLine();
+	
+	System.out.println("my name is "+name);
+	System.out.println("my score is "+mark/10+"/10");
+	System.out.println("Department is "+department);
+	
+	mag.close();
+	
+	
+}
+}
