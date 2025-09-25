@@ -1,0 +1,57 @@
+package september01;
+	 
+	import java.util.Scanner;
+	 
+	public class prg01 {
+		public static void main(String[]args) {
+			Scanner sc=new Scanner(System.in);
+			
+			System.out.println("Enter the Current month");
+			int currentUnit=sc.nextInt();
+			
+			System.out.println("Enter the Previous month");
+			int previousUnit=sc.nextInt();
+			
+			int currentBill,previousBill;
+			
+			if(currentUnit<=250) {
+				currentBill=currentUnit*4;
+			}
+			else {
+				currentBill=currentUnit*6;
+			}
+			
+			if(previousUnit<=250) {
+				previousBill=previousUnit*4;
+			}
+			else {
+				previousBill=previousUnit*6;
+				
+			}
+			
+			System.out.println("***ElectricBill***");
+			System.out.println("CurrentBill "+currentBill);
+			System.out.println("PreviousBill "+previousBill);
+	 
+			System.out.println("==========================================");
+			
+			System.out.println("Compare");
+			System.out.println("current>privious:"+(currentBill>previousBill));
+			System.out.println("current<privious:"+(currentBill<previousBill));
+			System.out.println("current==privious:"+(currentBill==previousBill));
+			
+			if(currentBill>3000 && previousBill>300) {
+				System.out.println("Both month higher");
+			}
+			else {
+				System.out.println("atlest one less");
+				
+			}
+	 
+			
+		}
+	 
+	}
+	 
+	 
+
