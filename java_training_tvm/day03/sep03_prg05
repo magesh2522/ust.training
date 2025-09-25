@@ -1,0 +1,47 @@
+package september01;
+
+import java.util.Scanner;
+
+
+public class prg05 {
+	public static void main(String[]args) {
+		Scanner sc=new Scanner (System.in);
+		
+		String name="magesh";
+		String password="12345";
+		
+		int attempt =3;
+		
+		while(attempt>0) {
+				System.out.println("Enter the User name:");
+				String username=sc.nextLine();
+				
+				System.out.println("Enter the Password:");
+				String userpassword=sc.nextLine();
+				
+				if(username.equals(name) && userpassword.equals(password)) {
+					System.out.println("Succefully login Welcome:"+username);
+					
+					break;
+				}
+					
+					else {
+						attempt--;
+						System.out.println("invalied Details");
+					}
+						if(attempt>0) {
+							System.out.println("you have "+attempt+"left");
+						
+					}
+						else {
+							
+							System.out.println("Account Locked ");
+
+					
+				}
+				
+		}
+	}
+	
+
+}
