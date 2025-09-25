@@ -1,0 +1,51 @@
+package practice09; 
+
+
+class student{
+	String name;
+	int rollNumber;
+	int age;
+	
+	student(String name,int rollNumber,int age){
+		this.name=name;
+		this.rollNumber=rollNumber;
+		this.age=age;
+		
+	}
+	void displayStudent() {
+		System.out.println("Name "+name);
+		System.out.println("RollNumber "+rollNumber);
+		System.out.println("age "+age);
+
+		
+	}
+	static class marks{
+		int tamil,english,maths;
+		marks(int tamil,int english,int maths){
+			this.tamil=tamil;
+			this.english=english;
+			this.maths=maths;
+		}
+		
+		void displayMarks() {
+			System.out.println("tamil "+tamil);
+			System.out.println("English "+english);
+			System.out.println("maths "+maths);
+			
+		}
+		
+	}
+public class prg01 {
+public static void main(String[]args) {
+	student s1=new student("magesh",1234,24);
+	marks m1=new marks(88,78,98);
+	
+	s1.displayStudent();
+	m1.displayMarks();
+	
+}
+}
+}
+
+
+
