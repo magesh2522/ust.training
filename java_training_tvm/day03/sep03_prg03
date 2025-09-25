@@ -1,0 +1,41 @@
+package september01;
+import java.util.Scanner;
+
+
+public class prg03 {
+
+
+
+
+	public static void main(String[]args){
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("*******Employee___Salary");
+		
+		System.out.println("Enter the basic Salary;");
+		double Salary=sc.nextDouble();
+		
+		double Hra=0.20*Salary;
+		double Da=0.50*Salary;
+		double Pf=0.12*Salary;
+		
+		double Gross_Salary=Salary+Hra+Da-Pf;
+		
+		
+		System.out.println("EMPLOYE SALARY DETAILS");
+		System.out.println("Basic_Salary "+Salary);
+		System.out.println("HRA (20%) " +Hra);
+		System.out.println("DA (50%) "+Da);
+		System.out.println("PF (12%) "+Pf);
+		
+		System.out.println("+-----------------------+");
+		
+		System.out.println("Gross_Salary:"+Gross_Salary);
+		
+		sc.close();
+		
+
+	}
+
+}
+
