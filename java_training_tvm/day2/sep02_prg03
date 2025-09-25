@@ -1,0 +1,13 @@
+package com.Aug29;
+
+
+
+public class prg05 {
+	
+	public static void main(String)[]args) {
+		String name="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		System.out.println(name.length());
+		
+	}
+
+}
